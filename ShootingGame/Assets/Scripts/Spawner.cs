@@ -27,7 +27,8 @@ public class Spawner : MonoBehaviour
             enemiesRemainingToSpawn--;
             nextSpawnTime = Time.time + currentWave.timeBetweenSpwans;
 
-            Enemy spawnedEnemy = Instantiate(enemy, Vector3.zero, Quaternion.identity);
+            Vector3 init = new Vector3(0, 1, 0);
+            Enemy spawnedEnemy = Instantiate(enemy, init, Quaternion.identity);
             spawnedEnemy.OnDeath += OnEnemyDeath;
         }
     }
